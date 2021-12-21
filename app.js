@@ -3,7 +3,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, User, m) {
   const hu = { "Content-Type": "text/html; charset=utf-8" };
   const CORS = {
     "Access-Control-Allow-Origin": "*",
-    "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,DELETE",
+    "Access-Control-Allow-Methods": "GET,POST,PUT,PATCH,OPTIONS,DELETE",
   };
   let headers = {
     "Content-Type": "text/plain",
@@ -13,7 +13,7 @@ export default function appScr(express, bodyParser, fs, crypto, http, User, m) {
     .use(bodyParser.urlencoded({ extended: true }))
     .get("/login/", (req, res) => {
       res.set(headers);
-      res.send("gamzanikita");
+      res.send("itmo307700");
     })
     .get("/code/", (req, res) => {
       res.set(headers);
@@ -70,5 +70,5 @@ export default function appScr(express, bodyParser, fs, crypto, http, User, m) {
         console.log(e.codeName);
       }
     })
-    .use(({ res: r }) => r.status(404).set(hu).send("gamzanikita"));
+    .use(({ res: r }) => r.status(404).set(hu).send("itmo307700"));
 }
